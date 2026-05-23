@@ -240,6 +240,68 @@ if (menuBtn && mobileMenu) {
   });
 }
 
+// Mailto enrichment + copy fallback
+var contactEmail = "istilezzhom@ciencias.unam.mx";
+var mailtoSubject = "Contacto desde portafolio";
+var mailtoBody = [
+  "Hola Ulises,",
+  "",
+  "Te contacto desde tu portafolio porque me interesa hablar contigo sobre una oportunidad o colaboracion.",
+  "",
+  "Mi nombre es:",
+  "Empresa o proyecto:",
+  "Mensaje:",
+  ""
+].join("\n");
+
+var mailtoHref =
+  "mailto:" +
+  contactEmail +
+  "?subject=" + encodeURIComponent(mailtoSubject) +
+  "&body=" + encodeURIComponent(mailtoBody);
+
+document.querySelectorAll("[data-mailto-target]").forEach(function (link) {
+  link.setAttribute("href", mailtoHref);
+});
+
+var copyEmailBtn = document.getElementById("copy-email-btn");
+var copyEmailStatus = document.getElementById("copy-email-status");
+var copyEmailStatusTimer = null;
+
+function setCopyEmailStatus(message, isError) {
+  if (!copyEmailStatus) {
+    return;
+  }
+
+  copyEmailStatus.textContent = message;
+  copyEmailStatus.classList.toggle("text-red-600", !!isError);
+  copyEmailStatus.classList.toggle("text-green-600", !isError && !!message);
+  copyEmailStatus.classList.toggle("text-muted", !message);
+
+  if (copyEmailStatusTimer) {
+    clearTimeout(copyEmailStatusTimer);
+  }
+
+  if (message) {
+    copyEmailStatusTimer = setTimeout(function () {
+      copyEmailStatus.textContent = "";
+      copyEmailStatus.classList.remove("text-red-600", "text-green-600");
+      copyEmailStatus.classList.add("text-muted");
+    }, 2500);
+  }
+}
+
+if (copyEmailBtn) {
+  copyEmailBtn.addEventListener("click", async function () {
+    try {
+      await navigator.clipboard.writeText(contactEmail);
+      setCopyEmailStatus("Correo copiado.", false);
+    } catch (error) {
+      setCopyEmailStatus("No se pudo copiar. Usa el boton Enviar correo.", true);
+    }
+  });
+}
+
 // 3D tilt effect for contact cards
 document.querySelectorAll(".contact-tilt").forEach(function (card) {
   card.addEventListener("mousemove", function (e) {
