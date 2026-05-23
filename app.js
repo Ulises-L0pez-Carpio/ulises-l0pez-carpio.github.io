@@ -122,7 +122,6 @@ var projects = [
     title: "Caso de estudio Google Analytics",
     summary: "Repositorio con un caso de estudio de analitica y lectura ejecutiva para comunicar patrones, resultados y oportunidades concretas.",
     repoUrl: "https://github.com/Ulises-L0pez-Carpio/Caso-de-estudio-Google-analytics",
-    previewVideo: "project-previews/caso-de-estudio-google-analytics.mp4",
     liveUrl: "",
     tags: ["Analytics", "EDA", "Reporting"]
   }
