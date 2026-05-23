@@ -1,0 +1,8 @@
+# Hyperframes / video generation workspace
+portafolio-video/
+
+# Hyperframes generated caches and metadata
+**/.thumbnails/
+**/hyperframes.json
+**/meta.json
+
