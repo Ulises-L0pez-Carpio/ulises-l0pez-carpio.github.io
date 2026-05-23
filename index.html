@@ -5,68 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta
     name="description"
-    content="Portafolio de Ulises Lopez Carpio con proyectos destacados, enlaces a repositorios y casos de estudio."
+    content="Portafolio de Ulises Lopez Carpio con proyectos de producto, analisis de datos y desarrollo full stack."
   >
   <title>Ulises Lopez Carpio | Portafolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap"
     rel="stylesheet"
   >
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="noise"></div>
   <div class="page-shell">
-    <header class="hero">
-      <p class="eyebrow">GitHub Pages Portfolio</p>
-      <h1>Ulises Lopez Carpio</h1>
-      <p class="hero-copy">
-        Portafolio enfocado en proyectos de desarrollo, analisis de datos y productos construidos de principio a fin.
-      </p>
-      <div class="hero-actions">
-        <a class="button button-primary" href="https://github.com/Ulises-L0pez-Carpio" target="_blank" rel="noreferrer">
-          Ver GitHub
-        </a>
-        <a class="button button-secondary" href="#proyectos">
-          Ver proyectos
-        </a>
-      </div>
+    <header class="topbar">
+      <a class="wordmark" href="#inicio">Ulises Lopez Carpio</a>
+      <nav class="topnav" aria-label="Principal">
+        <a href="#proyectos">Proyectos</a>
+        <a href="#perfil">Perfil</a>
+        <a href="https://github.com/Ulises-L0pez-Carpio" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
     </header>
 
     <main>
-      <section class="section intro">
-        <div>
-          <p class="section-label">Perfil</p>
-          <h2>Una pagina simple para centralizar tus mejores repositorios</h2>
+      <section class="hero-panel" id="inicio">
+        <div class="hero-copy">
+          <p class="eyebrow">Portafolio seleccionado</p>
+          <h1>Productos, datos y ejecucion tecnica con criterio visual.</h1>
+          <p class="lead">
+            Construyo proyectos que no se quedan en el prototipo: casos de estudio, aplicaciones web y productos
+            con entregables reales, narrativa clara y foco en el resultado final.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#proyectos">Explorar trabajo</a>
+            <a class="button button-secondary" href="https://github.com/Ulises-L0pez-Carpio" target="_blank" rel="noreferrer">
+              Abrir GitHub
+            </a>
+          </div>
         </div>
-        <p class="section-copy">
-          Este sitio esta pensado para ser tu punto de entrada en GitHub Pages: una portada breve, una seleccion cuidada de proyectos y enlaces directos a demos, repositorios y casos de estudio.
-        </p>
+
+        <aside class="hero-aside">
+          <div class="spotlight-card">
+            <p class="spotlight-label">Enfoque</p>
+            <p class="spotlight-value">Full stack, analisis aplicado y presentacion de producto.</p>
+          </div>
+          <div class="stat-grid">
+            <article class="stat-card">
+              <span class="stat-number">3</span>
+              <span class="stat-label">areas fuertes</span>
+            </article>
+            <article class="stat-card">
+              <span class="stat-number">6</span>
+              <span class="stat-label">repos visibles</span>
+            </article>
+            <article class="stat-card stat-card-wide">
+              <span class="stat-number">GitHub Pages</span>
+              <span class="stat-label">sitio publicado desde tu repo principal</span>
+            </article>
+          </div>
+        </aside>
       </section>
 
-      <section class="section" id="proyectos">
+      <section class="editorial-strip" id="perfil">
+        <p class="section-kicker">Perfil</p>
+        <div class="editorial-content">
+          <h2>No es una lista de repos. Es una seleccion de trabajo con intencion.</h2>
+          <p>
+            Este portafolio funciona como portada: presenta lo mejor del trabajo, orienta rapidamente a quien revisa
+            tu perfil y conecta cada proyecto con su contexto tecnico.
+          </p>
+        </div>
+      </section>
+
+      <section class="projects-section" id="proyectos">
         <div class="section-heading">
           <div>
-            <p class="section-label">Proyectos</p>
+            <p class="section-kicker">Proyectos</p>
             <h2>Trabajo destacado</h2>
           </div>
-          <p class="section-copy">
-            Edita el archivo <code>app.js</code> para reemplazar estos ejemplos por tus proyectos reales.
+          <p class="section-note">
+            La seleccion mezcla analisis de datos, producto web y referencias interactivas con publicacion directa en GitHub.
           </p>
         </div>
         <div id="project-grid" class="project-grid" aria-live="polite"></div>
-      </section>
-
-      <section class="section contact">
-        <div>
-          <p class="section-label">Siguiente paso</p>
-          <h2>Conecta esta carpeta con tu repo <code>ulises-l0pez-carpio.github.io</code></h2>
-        </div>
-        <p class="section-copy">
-          Una vez subido el contenido al repo correcto, GitHub Pages publicara este sitio en
-          <code>https://ulises-l0pez-carpio.github.io/</code>.
-        </p>
       </section>
     </main>
   </div>
