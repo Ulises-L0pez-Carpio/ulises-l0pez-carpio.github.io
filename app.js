@@ -15,7 +15,6 @@
       }
     });
 
-    // Show dividers only when both adjacent sections are visible on home page
     sections.forEach(function (div) {
       if (name === "inicio") {
         div.classList.remove("hidden");
@@ -24,7 +23,6 @@
       }
     });
 
-    // Update active nav link
     navLinks.forEach(function (link) {
       if (link.dataset.page === name) {
         link.classList.add("active");
@@ -33,13 +31,11 @@
       }
     });
 
-    // Update URL
     var url = name === "inicio" ? "/" : "/" + name;
     if (window.location.pathname !== url) {
       history.pushState({ page: name }, "", url);
     }
 
-    // Re-trigger animations
     if (found) {
       window.scrollTo({ top: 0, behavior: "smooth" });
       setTimeout(function () {
@@ -51,7 +47,6 @@
     }
   }
 
-  // Click handlers
   document.addEventListener("click", function (e) {
     var link = e.target.closest("[data-page]");
     if (link) {
@@ -59,7 +54,6 @@
       var page = link.dataset.page;
       showPage(page);
 
-      // Close mobile menu
       var mobileMenu = document.getElementById("mobile-menu");
       var menuBtn = document.getElementById("mobile-menu-btn");
       if (mobileMenu && menuBtn && !mobileMenu.classList.contains("hidden")) {
@@ -69,14 +63,12 @@
     }
   });
 
-  // Handle back/forward browser buttons
-  window.addEventListener("popstate", function (e) {
+  window.addEventListener("popstate", function () {
     var path = window.location.pathname.replace(/\/$/, "");
     var page = path === "" || path === "/" ? "inicio" : path.replace("/", "");
     showPage(page);
   });
 
-  // Initial load
   var initialPath = window.location.pathname.replace(/\/$/, "");
   var initialPage = initialPath === "" || initialPath === "/" ? "inicio" : initialPath.replace("/", "");
   showPage(initialPage);
@@ -86,46 +78,51 @@
 var projects = [
   {
     id: "01",
-    type: "Business Intelligence",
-    title: "Dashboard de análisis comercial",
-    summary: "Dashboard interactivo enfocado en indicadores clave de negocio, segmentación de clientes, tendencias y visualización ejecutiva para apoyar la toma de decisiones.",
+    type: "Repositorio GitHub",
+    title: "Analisis de retencion de clientes online retail",
+    summary: "Repositorio con pipeline reproducible, cohortes, segmentacion RFM y dashboard ejecutivo para analizar retencion, frecuencia y valor del cliente.",
     repoUrl: "https://github.com/Ulises-L0pez-Carpio/analisis-retencion-clientes-online-retail-ii",
+    previewVideo: "project-previews/analisis-retencion-clientes-online-retail.mp4",
     liveUrl: "",
-    tags: ["Power BI", "DAX", "Power Query", "Data Visualization"]
+    tags: ["Python", "SQL", "Power BI", "RFM"]
   },
   {
     id: "02",
-    type: "Producto web",
-    title: "App de recetas full stack",
-    summary: "Aplicación con autenticación, manejo de contenido y flujos reales de usuario, pensada como producto y no solo como ejercicio técnico.",
+    type: "Desarrollo web",
+    title: "Rezzeta",
+    summary: "Desarrollo web de una aplicacion orientada a producto, con flujos reales de usuario, contenido dinamico y una demo publicada como parte de mi portafolio.",
     repoUrl: "",
+    previewVideo: "project-previews/rezetta.mp4",
     liveUrl: "https://repo-app-recetas.vercel.app",
     tags: ["Next.js", "Supabase", "Vercel", "UX"]
   },
   {
     id: "03",
-    type: "Caso de estudio",
+    type: "Repositorio GitHub",
     title: "Afore digital funnel analytics",
-    summary: "Caso end-to-end de análisis de funnel digital con SQL, Python, segmentación y modelado predictivo orientado a decisiones de negocio.",
+    summary: "Repositorio end-to-end para analizar un funnel digital con SQL, Python, segmentacion y modelado predictivo orientado a decisiones de negocio.",
     repoUrl: "https://github.com/Ulises-L0pez-Carpio/afore-digital-funnel-analytics",
+    previewVideo: "project-previews/afore-digital-funnel-analytics.mp4",
     liveUrl: "",
     tags: ["SQL", "Python", "Modelado", "Dashboard"]
   },
   {
     id: "04",
-    type: "Producto",
+    type: "Repositorio GitHub",
     title: "Elden Ring Weakness Guide",
-    summary: "Companion app enfocada en referencias de combate, debilidades de bosses y experiencia móvil clara para consulta rápida durante el juego.",
+    summary: "Repositorio de presentacion para una companion app enfocada en referencias de combate, debilidades de bosses y experiencia movil clara.",
     repoUrl: "https://github.com/Ulises-L0pez-Carpio/elden-ring-weakness-guide",
+    previewVideo: "project-previews/elden-ring-weakness-guide.mp4",
     liveUrl: "",
     tags: ["Research", "Mobile UX", "Presentation"]
   },
   {
     id: "05",
-    type: "Analítica",
+    type: "Repositorio GitHub",
     title: "Caso de estudio Google Analytics",
-    summary: "Análisis mensual de postulantes con lectura ejecutiva y estructura de caso para comunicar patrones, resultados y oportunidades concretas.",
+    summary: "Repositorio con un caso de estudio de analitica y lectura ejecutiva para comunicar patrones, resultados y oportunidades concretas.",
     repoUrl: "https://github.com/Ulises-L0pez-Carpio/Caso-de-estudio-Google-analytics",
+    previewVideo: "project-previews/caso-de-estudio-google-analytics.mp4",
     liveUrl: "",
     tags: ["Analytics", "EDA", "Reporting"]
   }
@@ -142,13 +139,13 @@ function createProjectCard(project, idx) {
   if (project.repoUrl) {
     links.push(
       '<a class="inline-flex items-center px-4 py-2 rounded-lg border border-primary text-primary text-xs font-semibold hover:bg-primary hover:text-white transition-colors" href="' +
-        project.repoUrl + '" target="_blank" rel="noreferrer">Repositorio</a>'
+        project.repoUrl + '" target="_blank" rel="noreferrer">Repositorio en GitHub</a>'
     );
   }
   if (project.liveUrl) {
     links.push(
       '<a class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white text-xs font-semibold hover:shadow-lg hover:shadow-primary/25 transition-all" href="' +
-        project.liveUrl + '" target="_blank" rel="noreferrer">Demo</a>'
+        project.liveUrl + '" target="_blank" rel="noreferrer">Demo web</a>'
     );
   }
 
@@ -157,7 +154,17 @@ function createProjectCard(project, idx) {
 
   article.innerHTML =
     '<div class="project-banner" style="background: linear-gradient(135deg, ' + color + '15 0%, ' + color + '08 100%);">' +
-      '<span class="material-symbols-outlined" style="font-size: 3rem; color: ' + color + '; opacity: 0.3; font-variation-settings:\'FILL\' 1;">' + icon + '</span>' +
+      '<div class="project-banner-fallback">' +
+        '<span class="material-symbols-outlined" style="font-size: 3rem; color: ' + color + '; opacity: 0.3; font-variation-settings:\'FILL\' 1;">' + icon + '</span>' +
+      '</div>' +
+      (project.previewVideo
+        ? '<video class="project-preview-video" muted loop playsinline preload="metadata" aria-label="Preview de ' + project.title + '">' +
+            '<source src="' + project.previewVideo + '" type="video/mp4">' +
+          '</video>'
+        : '') +
+      '<div class="project-banner-overlay">' +
+        '<span class="project-banner-badge">Preview</span>' +
+      '</div>' +
     '</div>' +
     '<div class="p-6 space-y-4">' +
       '<div class="flex items-center justify-between gap-3">' +
@@ -177,6 +184,18 @@ function createProjectCard(project, idx) {
     span.textContent = tag;
     tagList.appendChild(span);
   });
+
+  var previewVideo = article.querySelector(".project-preview-video");
+  if (previewVideo) {
+    previewVideo.addEventListener("loadeddata", function () {
+      article.classList.add("project-card-has-video");
+      previewVideo.play().catch(function () {});
+    });
+
+    previewVideo.addEventListener("error", function () {
+      article.classList.remove("project-card-has-video");
+    });
+  }
 
   return article;
 }
@@ -204,7 +223,6 @@ function revealOnScroll() {
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", function () {
   revealOnScroll();
-  // Reveal project cards after they're rendered
   setTimeout(function () {
     document.querySelectorAll(".project-card").forEach(function (card) {
       var top = card.getBoundingClientRect().top;
@@ -231,7 +249,6 @@ if (menuBtn && mobileMenu) {
     }
   });
 
-  // Close menu on link click
   mobileMenu.querySelectorAll("a").forEach(function (link) {
     link.addEventListener("click", function () {
       mobileMenu.classList.add("hidden");
@@ -260,15 +277,6 @@ var mailtoHref =
   "?subject=" + encodeURIComponent(mailtoSubject) +
   "&body=" + encodeURIComponent(mailtoBody);
 
-document.querySelectorAll("[data-mailto-target]").forEach(function (link) {
-  link.setAttribute("href", mailtoHref);
-  link.addEventListener("click", function (event) {
-    event.preventDefault();
-    window.location.href = mailtoHref;
-    setCopyEmailStatus("Si no se abre tu correo, usa Copiar correo.", false);
-  });
-});
-
 var copyEmailBtn = document.getElementById("copy-email-btn");
 var copyEmailStatus = document.getElementById("copy-email-status");
 var copyEmailStatusTimer = null;
@@ -295,6 +303,15 @@ function setCopyEmailStatus(message, isError) {
     }, 2500);
   }
 }
+
+document.querySelectorAll("[data-mailto-target]").forEach(function (link) {
+  link.setAttribute("href", mailtoHref);
+  link.addEventListener("click", function (event) {
+    event.preventDefault();
+    window.location.href = mailtoHref;
+    setCopyEmailStatus("Si no se abre tu correo, usa Copiar correo.", false);
+  });
+});
 
 if (copyEmailBtn) {
   copyEmailBtn.addEventListener("click", async function () {
