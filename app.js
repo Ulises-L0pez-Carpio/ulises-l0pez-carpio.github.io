@@ -262,6 +262,11 @@ var mailtoHref =
 
 document.querySelectorAll("[data-mailto-target]").forEach(function (link) {
   link.setAttribute("href", mailtoHref);
+  link.addEventListener("click", function (event) {
+    event.preventDefault();
+    window.location.href = mailtoHref;
+    setCopyEmailStatus("Si no se abre tu correo, usa Copiar correo.", false);
+  });
 });
 
 var copyEmailBtn = document.getElementById("copy-email-btn");
