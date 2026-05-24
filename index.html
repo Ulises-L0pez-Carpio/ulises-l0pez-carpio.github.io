@@ -44,7 +44,7 @@
 
   <!-- NAVBAR -->
   <nav id="navbar" class="sticky top-0 z-50 bg-dark/80 backdrop-blur-md border-b border-darker">
-    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <div class="site-shell h-16 flex items-center justify-between">
       <a href="/" class="font-brand font-extrabold text-lg text-light tracking-tight" data-page="inicio">Ulises López</a>
 
       <div class="hidden md:flex items-center gap-8" id="nav-links">
@@ -53,13 +53,14 @@
         <a href="/contacto"    class="nav-link text-muted-dark hover:text-light text-sm font-medium transition-colors" data-page="contacto">Contacto</a>
       </div>
 
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-3">
         <a href="CV_Ulises_Lopez_Carpio.pdf" download class="hidden sm:inline-flex items-center px-5 py-2.5 rounded-full bg-primary text-white text-sm font-semibold hover:shadow-lg hover:shadow-primary/25 active:scale-95 transition-all">
           <span class="material-symbols-outlined text-lg mr-2" style="font-variation-settings:'FILL' 0, 'wght' 500;">description</span>
           Descargar CV
         </a>
-        <a href="https://github.com/Ulises-L0pez-Carpio" target="_blank" rel="noreferrer" class="text-muted-dark hover:text-light transition-colors" aria-label="GitHub">
-          <span class="material-symbols-outlined text-2xl" style="font-variation-settings:'FILL' 0, 'wght' 300;">code</span>
+        <a href="https://github.com/Ulises-L0pez-Carpio" target="_blank" rel="noreferrer" class="hidden sm:inline-flex items-center px-5 py-2.5 rounded-full border border-white/15 text-light text-sm font-semibold hover:border-white/35 hover:bg-white/5 transition-all" aria-label="Abrir perfil de GitHub de Ulises Lopez Carpio">
+          <span class="material-symbols-outlined text-lg mr-2" style="font-variation-settings:'FILL' 0, 'wght' 500;">code</span>
+          GitHub
         </a>
         <button id="mobile-menu-btn" class="md:hidden text-light" aria-label="Abrir menú">
           <span class="material-symbols-outlined text-2xl">menu</span>
@@ -72,6 +73,10 @@
       <a href="/proyectos"  class="mobile-nav-link block text-muted-dark hover:text-light text-sm font-medium" data-page="proyectos">Proyectos</a>
       <a href="/contacto"   class="mobile-nav-link block text-muted-dark hover:text-light text-sm font-medium" data-page="contacto">Contacto</a>
       <a href="CV_Ulises_Lopez_Carpio.pdf" download class="inline-block mt-2 px-5 py-2.5 rounded-full bg-primary text-white text-sm font-semibold">Descargar CV</a>
+      <a href="https://github.com/Ulises-L0pez-Carpio" target="_blank" rel="noreferrer" class="inline-flex items-center mt-2 px-5 py-2.5 rounded-full border border-white/15 text-light text-sm font-semibold">
+        <span class="material-symbols-outlined text-lg mr-2" style="font-variation-settings:'FILL' 0, 'wght' 500;">code</span>
+        GitHub
+      </a>
     </div>
   </nav>
 
@@ -80,7 +85,7 @@
     <section id="inicio" data-page="inicio" class="page-section relative bg-dark min-h-screen flex items-center overflow-hidden">
       <div class="hero-glow absolute inset-0 pointer-events-none"></div>
 
-      <div class="max-w-7xl mx-auto px-6 py-20 w-full">
+      <div class="site-shell hero-shell py-20 w-full">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           <div class="order-2 lg:order-1 space-y-6">
@@ -105,9 +110,9 @@
                 <span class="material-symbols-outlined text-lg mr-2" style="font-variation-settings:'FILL' 0, 'wght' 500;">apps</span>
                 Ver proyectos
               </a>
-              <a href="https://github.com/Ulises-L0pez-Carpio" target="_blank" rel="noreferrer" class="inline-flex items-center px-6 py-3 rounded-xl border-2 border-white/10 text-light font-semibold text-sm hover:border-white/40 hover:bg-white/5 transition-all">
-                <span class="material-symbols-outlined text-lg mr-2" style="font-variation-settings:'FILL' 0, 'wght' 500;">code</span>
-                GitHub
+              <a href="/contacto" data-page="contacto" class="inline-flex items-center px-6 py-3 rounded-xl border-2 border-white/10 text-light font-semibold text-sm hover:border-white/40 hover:bg-white/5 transition-all">
+                <span class="material-symbols-outlined text-lg mr-2" style="font-variation-settings:'FILL' 0, 'wght' 500;">mail</span>
+                Contacto
               </a>
             </div>
 
@@ -118,17 +123,22 @@
               <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">Excel</span>
               <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">DAX</span>
               <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">Power Query</span>
+              <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">PostgreSQL</span>
+              <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">Next.js</span>
+              <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">Supabase</span>
+              <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">Vercel</span>
+              <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">Amazon AWS</span>
+              <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">Spark</span>
+              <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">R</span>
+              <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">Git</span>
+              <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">TypeScript</span>
             </div>
           </div>
 
-          <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
+          <div class="order-1 lg:order-2 flex justify-center lg:justify-center">
             <div class="relative">
               <div class="w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 border-4 border-accent/30 flex items-center justify-center avatar-glow">
                 <span class="material-symbols-outlined text-8xl text-accent/40" style="font-variation-settings:'FILL' 1;">person</span>
-              </div>
-              <div class="absolute -bottom-3 -right-3 bg-dark border border-darker rounded-xl px-4 py-2 shadow-lg">
-                <p class="text-amber text-xs font-bold">+3 años</p>
-                <p class="text-muted-dark text-xs">experiencia</p>
               </div>
             </div>
           </div>
@@ -144,7 +154,7 @@
 
 
 
-      <div class="max-w-7xl mx-auto px-6">
+      <div class="site-shell">
         <p class="text-accent font-bold uppercase tracking-[0.2em] text-xs mb-3">Skills</p>
         <h2 class="font-headline text-4xl sm:text-5xl font-bold text-text mb-6">Principales skills</h2>
         <p class="text-muted text-base max-w-2xl mb-12">Herramientas, tecnologías y competencias que aplico en cada proyecto de datos y business intelligence.</p>
@@ -201,7 +211,7 @@
 
     <!-- 3. PROYECTOS -->
     <section id="proyectos" data-page="proyectos" class="page-section hidden py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-6">
+      <div class="site-shell">
         <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
           <div>
             <p class="text-accent font-bold uppercase tracking-[0.2em] text-xs mb-3">Proyectos</p>
@@ -209,7 +219,7 @@
             <div class="h-1.5 w-24 bg-primary rounded-full mt-4"></div>
           </div>
           <p class="text-muted text-base max-w-md">
-            Esta sección presenta principalmente mis repositorios de GitHub, junto con casos de estudio y proyectos publicados que resumen mi experiencia en datos y producto digital.
+            Esta sección presenta principalmente mis repositorios de GitHub, junto con casos de estudio y proyectos publicados que resumen mi experiencia en datos y productos digitales.
           </p>
         </div>
 
@@ -221,14 +231,14 @@
 
     <!-- 4. CONTACTO -->
     <section id="contacto" data-page="contacto" class="page-section hidden py-20 bg-light">
-      <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="site-shell contact-shell">
         <p class="text-accent font-bold uppercase tracking-[0.2em] text-xs mb-3">Contacto</p>
         <h2 class="font-headline text-4xl sm:text-5xl font-bold text-text mb-4">Contacto</h2>
         <p class="text-muted text-base sm:text-lg max-w-2xl mx-auto mb-12">
           Estoy abierto a oportunidades como Data Analyst, BI Analyst o roles relacionados con análisis, visualización y automatización de datos.
         </p>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-8 mb-12">
           <a href="mailto:istilezzhom@ciencias.unam.mx" data-mailto-target="card" class="contact-tilt group block bg-white border border-border rounded-2xl p-6 shadow-sm hover:-translate-y-1 hover:border-primary hover:shadow-lg transition-all duration-300 text-center no-underline" aria-label="Enviar correo a istilezzhom@ciencias.unam.mx">
             <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all">
               <span class="material-symbols-outlined text-2xl text-accent group-hover:text-white" style="font-variation-settings:'FILL' 0;">mail</span>
@@ -281,7 +291,7 @@
 
   <!-- FOOTER -->
   <footer class="bg-dark border-t border-darker py-10">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+    <div class="site-shell flex flex-col sm:flex-row items-center justify-between gap-6">
       <div class="text-center sm:text-left">
         <p class="font-brand font-extrabold text-light">Ulises López</p>
         <p class="text-muted-dark text-xs mt-1">Portafolio</p>
