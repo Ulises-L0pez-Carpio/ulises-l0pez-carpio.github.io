@@ -48,7 +48,7 @@
   }
 
   document.addEventListener("click", function (e) {
-    var link = e.target.closest("[data-page]");
+    var link = e.target.closest("a[data-page], button[data-page]");
     if (link) {
       e.preventDefault();
       var page = link.dataset.page;

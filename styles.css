@@ -11,6 +11,28 @@ body {
   overflow-x: hidden;
 }
 
+.site-shell {
+  width: min(1680px, calc(100vw - 64px));
+  margin: 0 auto;
+}
+
+.hero-shell {
+  width: min(1240px, calc(100vw - 300px));
+  padding-inline: clamp(32px, 5vw, 96px);
+}
+
+.contact-shell {
+  width: min(1520px, calc(100vw - 64px));
+  margin: 0 auto;
+}
+
+.contact-shell > :first-child {
+  max-width: 52rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
 ::selection {
   background: rgba(56, 189, 248, 0.3);
   color: #F8FAFC;
@@ -188,7 +210,20 @@ body {
 }
 
 @media (max-width: 640px) {
+  .site-shell,
+  .contact-shell,
+  .hero-shell {
+    width: calc(100vw - 32px);
+  }
+
   .hero-glow {
     background: radial-gradient(circle at 50% 20%, rgba(37, 99, 235, 0.12) 0%, rgba(11, 17, 32, 0) 60%);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .hero-shell {
+    width: calc(100vw - 96px);
+    padding-inline: 0;
   }
 }
