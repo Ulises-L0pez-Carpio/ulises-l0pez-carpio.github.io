@@ -3,315 +3,366 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portafolio de Ulises Lopez Carpio — Data Analyst & BI Analyst. Proyectos de analisis de datos, dashboards y desarrollo full stack.">
-  <title>Ulises Lopez Carpio | Data Analyst Portfolio</title>
+  <meta name="description" content="Portafolio profesional de Ulises López Carpio, BI Analyst y Analista de Datos con experiencia en Python, SQL, Power BI, logística, monitoreo operativo, dashboards, KPIs y automatización de reportes.">
+  <meta property="og:title" content="Ulises López Carpio | BI Analyst & Data Analyst Portfolio">
+  <meta property="og:description" content="Portafolio profesional de Ulises López Carpio: analítica de datos, Business Intelligence, dashboards de KPIs, Python, SQL y Power BI aplicados a problemas reales.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ulises-l0pez-carpio.github.io/">
+  <meta name="theme-color" content="#0F172A">
+  <title>Ulises López Carpio | BI Analyst & Data Analyst Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&family=Public+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Public+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            dark:    '#0B1120',
-            darker:  '#1E293B',
-            light:   '#F8FAFC',
-            primary: '#2563EB',
-            accent:  '#38BDF8',
-            amber:   '#F59E0B',
-            text:    '#0F172A',
-            muted:   '#64748B',
-            'muted-dark': '#CBD5E1',
-            border:  '#E2E8F0',
-          },
-          fontFamily: {
-            headline: ['"Playfair Display"', 'serif'],
-            body:     ['Inter', 'sans-serif'],
-            brand:    ['"Public Sans"', 'sans-serif'],
-          },
-        }
-      }
-    }
-  </script>
-
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="font-body text-text antialiased flex flex-col min-h-screen">
+<body>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Navegacion principal">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">Ulises López Carpio</a>
 
-  <!-- NAVBAR -->
-  <nav id="navbar" class="sticky top-0 z-50 bg-dark/80 backdrop-blur-md border-b border-darker">
-    <div class="site-shell h-16 flex items-center justify-between">
-      <a href="/" class="font-brand font-extrabold text-lg text-light tracking-tight" data-page="inicio">Ulises López</a>
+      <button id="mobile-menu-btn" class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+      </button>
 
-      <div class="hidden md:flex items-center gap-8" id="nav-links">
-        <a href="/"            class="nav-link text-muted-dark hover:text-light text-sm font-medium transition-colors" data-page="inicio">Inicio</a>
-        <a href="/proyectos"   class="nav-link text-muted-dark hover:text-light text-sm font-medium transition-colors" data-page="proyectos">Proyectos</a>
-        <a href="/contacto"    class="nav-link text-muted-dark hover:text-light text-sm font-medium transition-colors" data-page="contacto">Contacto</a>
+      <div id="nav-links" class="nav-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#skills">Skills</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#certificaciones">Certificaciones</a>
+        <a href="#contacto">Contacto</a>
       </div>
+    </nav>
+  </header>
 
-      <div class="flex items-center gap-3">
-        <a href="CV_Ulises_Lopez_Carpio.pdf" download class="hidden sm:inline-flex items-center px-5 py-2.5 rounded-full bg-primary text-white text-sm font-semibold hover:shadow-lg hover:shadow-primary/25 active:scale-95 transition-all">
-          <span class="material-symbols-outlined text-lg mr-2" style="font-variation-settings:'FILL' 0, 'wght' 500;">description</span>
-          Descargar CV
-        </a>
-        <a href="https://github.com/Ulises-L0pez-Carpio" target="_blank" rel="noreferrer" class="hidden sm:inline-flex items-center px-5 py-2.5 rounded-full border border-white/15 text-light text-sm font-semibold hover:border-white/35 hover:bg-white/5 transition-all" aria-label="Abrir perfil de GitHub de Ulises Lopez Carpio">
-          <span class="material-symbols-outlined text-lg mr-2" style="font-variation-settings:'FILL' 0, 'wght' 500;">code</span>
-          GitHub
-        </a>
-        <button id="mobile-menu-btn" class="md:hidden text-light" aria-label="Abrir menú">
-          <span class="material-symbols-outlined text-2xl">menu</span>
-        </button>
-      </div>
-    </div>
-
-    <div id="mobile-menu" class="hidden md:hidden bg-dark/95 backdrop-blur-md border-t border-darker px-6 py-4 space-y-3">
-      <a href="/"           class="mobile-nav-link block text-muted-dark hover:text-light text-sm font-medium" data-page="inicio">Inicio</a>
-      <a href="/proyectos"  class="mobile-nav-link block text-muted-dark hover:text-light text-sm font-medium" data-page="proyectos">Proyectos</a>
-      <a href="/contacto"   class="mobile-nav-link block text-muted-dark hover:text-light text-sm font-medium" data-page="contacto">Contacto</a>
-      <a href="CV_Ulises_Lopez_Carpio.pdf" download class="inline-block mt-2 px-5 py-2.5 rounded-full bg-primary text-white text-sm font-semibold">Descargar CV</a>
-      <a href="https://github.com/Ulises-L0pez-Carpio" target="_blank" rel="noreferrer" class="inline-flex items-center mt-2 px-5 py-2.5 rounded-full border border-white/15 text-light text-sm font-semibold">
-        <span class="material-symbols-outlined text-lg mr-2" style="font-variation-settings:'FILL' 0, 'wght' 500;">code</span>
-        GitHub
-      </a>
-    </div>
-  </nav>
-
-  <main class="flex-1 flex flex-col">
-    <!-- 1. HERO / INICIO -->
-    <section id="inicio" data-page="inicio" class="page-section relative bg-dark min-h-screen flex items-center overflow-hidden">
-      <div class="hero-glow absolute inset-0 pointer-events-none"></div>
-
-      <div class="site-shell hero-shell py-20 w-full">
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-
-          <div class="order-2 lg:order-1 space-y-6">
-            <p class="text-accent font-bold uppercase tracking-[0.2em] text-xs">
-              Ciencia de datos &middot; Datos &middot; BI Analyst &middot; Desarrollador
-            </p>
-
-            <h1 class="font-headline text-5xl sm:text-6xl lg:text-7xl font-extrabold text-light leading-[1.05]">
-              Hola, soy<br>Ulises López
-            </h1>
-
-            <p class="text-muted-dark text-base sm:text-lg leading-relaxed max-w-xl">
-              Transformo datos en insights accionables mediante análisis, dashboards, automatización y visualización de información para apoyar la toma de decisiones.
-            </p>
-
-            <div class="flex flex-wrap gap-3 pt-2">
-              <a href="CV_Ulises_Lopez_Carpio.pdf" download class="inline-flex items-center px-6 py-3 rounded-xl bg-primary text-white font-semibold text-sm hover:shadow-lg hover:shadow-primary/25 active:scale-95 transition-all">
-                <span class="material-symbols-outlined text-lg mr-2" style="font-variation-settings:'FILL' 0, 'wght' 500;">description</span>
-                Descargar CV
-              </a>
-              <a href="/proyectos" data-page="proyectos" class="inline-flex items-center px-6 py-3 rounded-xl border-2 border-white/10 text-light font-semibold text-sm hover:border-white/40 hover:bg-white/5 transition-all">
-                <span class="material-symbols-outlined text-lg mr-2" style="font-variation-settings:'FILL' 0, 'wght' 500;">apps</span>
-                Ver proyectos
-              </a>
-              <a href="/contacto" data-page="contacto" class="inline-flex items-center px-6 py-3 rounded-xl border-2 border-white/10 text-light font-semibold text-sm hover:border-white/40 hover:bg-white/5 transition-all">
-                <span class="material-symbols-outlined text-lg mr-2" style="font-variation-settings:'FILL' 0, 'wght' 500;">mail</span>
-                Contacto
-              </a>
-            </div>
-
-            <div class="flex flex-wrap gap-2 pt-4">
-              <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">Python</span>
-              <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">SQL</span>
-              <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">Power BI</span>
-              <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">Excel</span>
-              <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">DAX</span>
-              <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">Power Query</span>
-              <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">PostgreSQL</span>
-              <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">Next.js</span>
-              <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">Supabase</span>
-              <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">Vercel</span>
-              <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">Amazon AWS</span>
-              <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">Spark</span>
-              <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">R</span>
-              <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">Git</span>
-              <span class="px-3 py-1.5 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-xs font-medium text-muted-dark">TypeScript</span>
-            </div>
-          </div>
-
-          <div class="order-1 lg:order-2 flex justify-center lg:justify-center">
-            <div class="relative">
-              <div class="w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 border-4 border-accent/30 flex items-center justify-center avatar-glow">
-                <span class="material-symbols-outlined text-8xl text-accent/40" style="font-variation-settings:'FILL' 1;">person</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <!-- 2. SKILLS -->
-    <section class="page-section hidden py-20 bg-light" data-page="skills">
-
-
-
-      <div class="site-shell">
-        <p class="text-accent font-bold uppercase tracking-[0.2em] text-xs mb-3">Skills</p>
-        <h2 class="font-headline text-4xl sm:text-5xl font-bold text-text mb-6">Principales skills</h2>
-        <p class="text-muted text-base max-w-2xl mb-12">Herramientas, tecnologías y competencias que aplico en cada proyecto de datos y business intelligence.</p>
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-            <span class="material-symbols-outlined text-3xl text-primary mb-4" style="font-variation-settings:'FILL' 0;">analytics</span>
-            <h3 class="font-semibold text-text mb-4">Data Analysis</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-[#38BDF8] text-xs font-medium">Python</span>
-              <span class="px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-[#38BDF8] text-xs font-medium">Pandas</span>
-              <span class="px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-[#38BDF8] text-xs font-medium">NumPy</span>
-              <span class="px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-[#38BDF8] text-xs font-medium">Excel</span>
-            </div>
-          </div>
-
-          <div class="bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-            <span class="material-symbols-outlined text-3xl text-primary mb-4" style="font-variation-settings:'FILL' 0;">database</span>
-            <h3 class="font-semibold text-text mb-4">Databases</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-[#38BDF8] text-xs font-medium">SQL</span>
-              <span class="px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-[#38BDF8] text-xs font-medium">PostgreSQL</span>
-              <span class="px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-[#38BDF8] text-xs font-medium">MySQL</span>
-              <span class="px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-[#38BDF8] text-xs font-medium">BigQuery</span>
-            </div>
-          </div>
-
-          <div class="bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-            <span class="material-symbols-outlined text-3xl text-primary mb-4" style="font-variation-settings:'FILL' 0;">insights</span>
-            <h3 class="font-semibold text-text mb-4">Business Intelligence</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-[#38BDF8] text-xs font-medium">Power BI</span>
-              <span class="px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-[#38BDF8] text-xs font-medium">DAX</span>
-              <span class="px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-[#38BDF8] text-xs font-medium">Power Query</span>
-              <span class="px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-[#38BDF8] text-xs font-medium">Dashboards</span>
-            </div>
-          </div>
-
-          <div class="bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-            <span class="material-symbols-outlined text-3xl text-primary mb-4" style="font-variation-settings:'FILL' 0;">emoji_events</span>
-            <h3 class="font-semibold text-text mb-4">Professional Skills</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-[#38BDF8] text-xs font-medium">Datos</span>
-              <span class="px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-[#38BDF8] text-xs font-medium">Storytelling</span>
-              <span class="px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-[#38BDF8] text-xs font-medium">Optimización</span>
-              <span class="px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-[#38BDF8] text-xs font-medium">Reporting</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <!-- 3. PROYECTOS -->
-    <section id="proyectos" data-page="proyectos" class="page-section hidden py-20 bg-white">
-      <div class="site-shell">
-        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
-          <div>
-            <p class="text-accent font-bold uppercase tracking-[0.2em] text-xs mb-3">Proyectos</p>
-            <h2 class="font-headline text-4xl sm:text-5xl font-bold text-text">Repositorios y trabajo destacado</h2>
-            <div class="h-1.5 w-24 bg-primary rounded-full mt-4"></div>
-          </div>
-          <p class="text-muted text-base max-w-md">
-            Esta sección presenta principalmente mis repositorios de GitHub, junto con casos de estudio y proyectos publicados que resumen mi experiencia en datos y productos digitales.
+  <main>
+    <section id="inicio" class="hero section">
+      <div class="site-shell hero-grid">
+        <div class="hero-content reveal">
+          <p class="eyebrow">BI Analyst | Analista de Datos</p>
+          <h1>Ulises López Carpio</h1>
+          <p class="hero-subtitle">
+            Matemático orientado a analítica de datos, Business Intelligence, ciencia de datos y desarrollo web, con experiencia en logística, monitoreo operativo, integración de bases de datos, limpieza de información, dashboards de KPIs y automatización de reportes.
           </p>
-        </div>
+          <p class="hero-copy">
+            Uso Python, SQL, Excel y Power BI para analizar datos, construir métricas y generar reportes que apoyen la toma de decisiones. Además, desarrollo proyectos web donde integro análisis, visualización de datos y soluciones digitales.
+          </p>
 
-        <div id="project-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" aria-live="polite"></div>
-      </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <!-- 4. CONTACTO -->
-    <section id="contacto" data-page="contacto" class="page-section hidden py-20 bg-light">
-      <div class="site-shell contact-shell">
-        <p class="text-accent font-bold uppercase tracking-[0.2em] text-xs mb-3">Contacto</p>
-        <h2 class="font-headline text-4xl sm:text-5xl font-bold text-text mb-4">Contacto</h2>
-        <p class="text-muted text-base sm:text-lg max-w-2xl mx-auto mb-12">
-          Estoy abierto a oportunidades como Data Analyst, BI Analyst o roles relacionados con análisis, visualización y automatización de datos.
-        </p>
-
-        <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-8 mb-12">
-          <a href="mailto:istilezzhom@ciencias.unam.mx" data-mailto-target="card" class="contact-tilt group block bg-white border border-border rounded-2xl p-6 shadow-sm hover:-translate-y-1 hover:border-primary hover:shadow-lg transition-all duration-300 text-center no-underline" aria-label="Enviar correo a istilezzhom@ciencias.unam.mx">
-            <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all">
-              <span class="material-symbols-outlined text-2xl text-accent group-hover:text-white" style="font-variation-settings:'FILL' 0;">mail</span>
-            </div>
-            <p class="text-accent font-bold uppercase tracking-wider text-xs mb-1">Email</p>
-            <p class="contact-email text-text font-medium text-sm">istilezzhom@ciencias.unam.mx</p>
-          </a>
-
-          <a href="https://www.linkedin.com/in/ulises-lopez-carpio-74725a283/" target="_blank" rel="noreferrer" class="contact-tilt group block bg-white border border-border rounded-2xl p-6 shadow-sm hover:-translate-y-1 hover:border-primary hover:shadow-lg transition-all duration-300 text-center no-underline" aria-label="Abrir perfil de LinkedIn de Ulises Lopez Carpio">
-            <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all">
-              <svg class="w-6 h-6 text-accent group-hover:text-white transition-colors" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-                <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M8.34 17V10.68H6.24V17H8.34M7.29 9.81A1.22 1.22 0 1 0 7.29 7.37A1.22 1.22 0 0 0 7.29 9.81M17 17V13.53C17 11.67 16.6 10.24 14.42 10.24C13.37 10.24 12.67 10.81 12.38 11.36H12.35V10.41H10.34V17H12.44V13.74C12.44 12.88 12.6 12.04 13.66 12.04C14.7 12.04 14.72 13.01 14.72 13.8V17H17Z"/>
-              </svg>
-            </div>
-            <p class="text-accent font-bold uppercase tracking-wider text-xs mb-1">LinkedIn</p>
-            <p class="text-text font-medium text-sm">Ulises Lopez Carpio</p>
-          </a>
-
-          <a href="https://github.com/Ulises-L0pez-Carpio" target="_blank" rel="noreferrer" class="contact-tilt group block bg-white border border-border rounded-2xl p-6 shadow-sm hover:-translate-y-1 hover:border-primary hover:shadow-lg transition-all duration-300 text-center no-underline" aria-label="Abrir perfil de GitHub de Ulises Lopez Carpio">
-            <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all">
-              <svg class="w-6 h-6 text-accent group-hover:text-white transition-colors" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-                <path d="M12 .5C5.65.5.5 5.66.5 12.03C.5 17.12 3.79 21.43 8.35 22.96C8.92 23.06 9.13 22.72 9.13 22.43C9.13 22.17 9.12 21.31 9.11 20.4C5.95 21.09 5.28 18.87 5.28 18.87C4.76 17.55 4.01 17.2 4.01 17.2C2.97 16.49 4.09 16.5 4.09 16.5C5.24 16.58 5.84 17.69 5.84 17.69C6.86 19.44 8.52 18.93 9.17 18.63C9.27 17.89 9.57 17.38 9.9 17.09C7.38 16.8 4.73 15.83 4.73 11.5C4.73 10.27 5.17 9.27 5.89 8.48C5.77 8.19 5.38 7 6 5.39C6 5.39 6.97 5.08 9.11 6.53C10.04 6.27 11.04 6.14 12.03 6.14C13.02 6.14 14.02 6.27 14.95 6.53C17.09 5.08 18.06 5.39 18.06 5.39C18.68 7 18.29 8.19 18.17 8.48C18.89 9.27 19.33 10.27 19.33 11.5C19.33 15.84 16.67 16.79 14.15 17.08C14.57 17.44 14.94 18.15 14.94 19.24C14.94 20.8 14.93 22.05 14.93 22.43C14.93 22.72 15.14 23.07 15.72 22.96C20.28 21.43 23.56 17.12 23.56 12.03C23.56 5.66 18.41.5 12 .5Z"/>
-              </svg>
-            </div>
-            <p class="text-accent font-bold uppercase tracking-wider text-xs mb-1">GitHub</p>
-            <p class="text-text font-medium text-sm">Ulises-L0pez-Carpio</p>
-          </a>
-
-          <div class="bg-white border border-border rounded-2xl p-6 shadow-sm text-center">
-            <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
-              <span class="material-symbols-outlined text-2xl text-accent" style="font-variation-settings:'FILL' 0;">location_on</span>
-            </div>
-            <p class="text-accent font-bold uppercase tracking-wider text-xs mb-1">Ubicación</p>
-            <p class="text-text font-medium text-sm">México</p>
+          <div class="cta-row" aria-label="Acciones principales">
+            <a class="btn btn-primary" href="CV_Ulises_Lopez_Carpio.pdf" download>
+              <span class="material-symbols-outlined" aria-hidden="true">description</span>
+              Descargar CV
+            </a>
+            <a class="btn btn-secondary" href="#proyectos">
+              <span class="material-symbols-outlined" aria-hidden="true">dashboard</span>
+              Ver proyectos
+            </a>
+            <a class="btn btn-ghost" href="https://github.com/Ulises-L0pez-Carpio" target="_blank" rel="noreferrer">
+              <span class="material-symbols-outlined" aria-hidden="true">code</span>
+              GitHub
+            </a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/ulises-lópez-carpio-74725a283" target="_blank" rel="noreferrer">
+              <span class="material-symbols-outlined" aria-hidden="true">person</span>
+              LinkedIn
+            </a>
+            <a class="btn btn-ghost" href="#contacto">
+              <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+              Contacto
+            </a>
           </div>
         </div>
 
-        <div class="flex flex-wrap justify-center gap-4">
-          <a href="mailto:istilezzhom@ciencias.unam.mx" data-mailto-target="cta" class="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-primary text-white font-semibold text-sm hover:shadow-lg hover:shadow-primary/25 hover:scale-105 active:scale-95 transition-all" aria-label="Enviar correo a istilezzhom@ciencias.unam.mx">
-            Enviar correo
-          </a>
-          <button id="copy-email-btn" type="button" class="inline-flex items-center justify-center px-8 py-3.5 rounded-full border-2 border-primary text-primary font-semibold text-sm hover:bg-primary hover:text-white transition-all">
-            Copiar correo
-          </button>
+        <aside class="hero-panel reveal" aria-label="Indicadores profesionales">
+          <div class="panel-header">
+            <span class="material-symbols-outlined" aria-hidden="true">monitoring</span>
+            <div>
+              <p>Indicadores aplicados</p>
+              <strong>Experiencia Levic</strong>
+            </div>
+          </div>
+          <div class="metric-grid">
+            <div class="metric-card">
+              <strong>+500</strong>
+              <span>rutas centralizadas</span>
+            </div>
+            <div class="metric-card">
+              <strong>+1,000</strong>
+              <span>unidades monitoreadas</span>
+            </div>
+            <div class="metric-card">
+              <strong>~10,000</strong>
+              <span>clientes integrados en base operativa</span>
+            </div>
+            <div class="metric-card">
+              <strong>-15%</strong>
+              <span>errores de geolocalización y duplicados</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="sobre-mi" class="section">
+      <div class="site-shell two-column">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Sobre mí</p>
+          <h2>Perfil analítico con experiencia operativa y proyectos propios</h2>
         </div>
-        <p id="copy-email-status" class="mt-4 text-sm text-muted" aria-live="polite"></p>
+        <div class="about-card reveal">
+          <p>
+            Soy Licenciado en Matemáticas por la UNAM y he orientado mi perfil hacia el análisis de datos, Business Intelligence, ciencia de datos y automatización de reportes. Mi experiencia en logística y monitoreo operativo me ha permitido trabajar con datos reales de rutas, unidades, clientes, trazas GPS y riesgos operativos, convirtiendo información dispersa en KPIs, dashboards y reportes útiles para la toma de decisiones.
+          </p>
+          <p>
+            También desarrollo proyectos propios de análisis de datos, visualización y desarrollo web, donde aplico Python, SQL, Power BI y tecnologías web para construir soluciones prácticas y documentar procesos de forma clara.
+          </p>
+          <p>
+            Me interesa usar el análisis, la visualización y la automatización para resolver problemas operativos y de negocio, así como comunicar hallazgos de manera comprensible para equipos técnicos y no técnicos.
+          </p>
+          <div class="strength-grid">
+            <div>
+              <span class="material-symbols-outlined" aria-hidden="true">functions</span>
+              <strong>Pensamiento matemático aplicado</strong>
+            </div>
+            <div>
+              <span class="material-symbols-outlined" aria-hidden="true">route</span>
+              <strong>Análisis operativo con datos reales</strong>
+            </div>
+            <div>
+              <span class="material-symbols-outlined" aria-hidden="true">stacked_bar_chart</span>
+              <strong>Comunicación visual mediante dashboards</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section section-alt">
+      <div class="site-shell">
+        <div class="section-heading centered reveal">
+          <p class="eyebrow">Skills</p>
+          <h2>Tecnologías y herramientas</h2>
+          <p>Herramientas que uso en proyectos de análisis de datos, Business Intelligence, ciencia de datos y desarrollo web.</p>
+        </div>
+        <div class="skills-grid reveal">
+          <article class="skill-card">
+            <span class="material-symbols-outlined" aria-hidden="true">analytics</span>
+            <h3>Lenguajes y análisis</h3>
+            <div class="tag-list">
+              <span>Python</span><span>Pandas</span><span>NumPy</span><span>SQL</span><span>R intermedio</span>
+            </div>
+          </article>
+          <article class="skill-card">
+            <span class="material-symbols-outlined" aria-hidden="true">insert_chart</span>
+            <h3>Business Intelligence y visualización</h3>
+            <div class="tag-list">
+              <span>Power BI</span><span>DAX</span><span>Tableau</span><span>Looker Studio</span><span>Dashboards</span><span>Storytelling con datos</span>
+            </div>
+          </article>
+          <article class="skill-card">
+            <span class="material-symbols-outlined" aria-hidden="true">database</span>
+            <h3>Bases de datos y modelado</h3>
+            <div class="tag-list">
+              <span>PostgreSQL</span><span>MySQL</span><span>MS SQL Server</span><span>Modelos relacionales</span><span>ERD</span><span>Validación de datos</span>
+            </div>
+          </article>
+          <article class="skill-card">
+            <span class="material-symbols-outlined" aria-hidden="true">table</span>
+            <h3>Excel y automatización</h3>
+            <div class="tag-list">
+              <span>Excel avanzado</span><span>Power Query</span><span>Tablas dinámicas</span><span>Reportes automatizados</span><span>Limpieza de datos</span>
+            </div>
+          </article>
+          <article class="skill-card">
+            <span class="material-symbols-outlined" aria-hidden="true">terminal</span>
+            <h3>Flujo de trabajo y herramientas</h3>
+            <div class="tag-list">
+              <span>Git</span><span>GitHub</span><span>Jupyter</span><span>RStudio</span><span>Visual Studio Code</span><span>Documentación reproducible</span>
+            </div>
+          </article>
+          <article class="skill-card">
+            <span class="material-symbols-outlined" aria-hidden="true">schema</span>
+            <h3>Procesos analíticos</h3>
+            <div class="tag-list">
+              <span>ETL</span><span>EDA</span><span>KPIs</span><span>Limpieza y validación</span><span>Manejo de datos sensibles</span><span>Análisis operativo</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiencia" class="section">
+      <div class="site-shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Experiencia aplicada a datos</p>
+          <h2>Trabajo profesional traducido a análisis, KPIs y reportes</h2>
+        </div>
+        <div class="experience-grid reveal">
+          <article class="experience-card">
+            <div class="experience-header">
+              <div>
+                <h3>Analista de Datos de Monitoreo y Logística</h3>
+                <p>Levic</p>
+              </div>
+              <span>sep. 2025 - feb. 2026</span>
+            </div>
+            <ul>
+              <li>Diseñé y mantuve una base de datos diaria para centralizar más de 500 rutas, más de 1,000 unidades y cerca de 10,000 clientes.</li>
+              <li>Implementé procesos de limpieza y validación con Python y SQL.</li>
+              <li>Reduje errores de geolocalización y registros duplicados en aproximadamente 15%.</li>
+              <li>Desarrollé dashboards en Power BI para cumplimiento de rutas, tiempos de entrega y desempeño por unidad.</li>
+              <li>Apoyé mejora operativa y automatización parcial de reportes.</li>
+            </ul>
+              <div class="tag-list compact"><span>Python</span><span>SQL</span><span>Power BI</span><span>KPIs</span><span>Logística</span></div>
+          </article>
+
+          <article class="experience-card">
+            <div class="experience-header">
+              <div>
+                <h3>Analista Jr. de Logística</h3>
+                <p>LogRisk México</p>
+              </div>
+              <span>ago. 2023 - jun. 2024</span>
+            </div>
+            <ul>
+              <li>Procesé y analicé grandes volúmenes de trazas GPS.</li>
+              <li>Identifiqué patrones de riesgo operativo para apoyar prevención de incidentes.</li>
+              <li>Desarrollé indicadores y visualizaciones en Power BI.</li>
+              <li>Comuniqué hallazgos a áreas no técnicas.</li>
+              <li>Apliqué modelos matemáticos sencillos para evaluación de escenarios y predicción básica de eventos críticos.</li>
+            </ul>
+            <div class="tag-list compact"><span>Power BI</span><span>GPS</span><span>Riesgo operativo</span><span>Visualizacion</span></div>
+          </article>
+
+          <article class="experience-card">
+            <div class="experience-header">
+              <div>
+                <h3>Asistente Financiero y Juridico</h3>
+                <p>Confecciones Martín S.A. de C.V.</p>
+              </div>
+              <span>abr. 2021 - jun. 2023</span>
+            </div>
+            <ul>
+              <li>Apoyé captura y registro diario de ventas en Excel y ERP.</li>
+              <li>Gestioné archivos con cientos y miles de entradas.</li>
+              <li>Elaboré reportes semanales de ventas e inventario.</li>
+              <li>Mejoré orden, formato y revisión de archivos en Excel.</li>
+              <li>Di seguimiento a pagos, pedidos, contratos e inventario.</li>
+            </ul>
+            <div class="tag-list compact"><span>Excel avanzado</span><span>ERP</span><span>Reportes</span><span>Inventario</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="proyectos" class="section section-alt">
+      <div class="site-shell">
+        <div class="section-heading centered reveal">
+          <p class="eyebrow">Proyectos</p>
+          <h2>Proyectos de análisis y desarrollo</h2>
+          <p>Casos prácticos donde aplico análisis de datos, Business Intelligence, ciencia de datos y desarrollo web para construir soluciones, dashboards y reportes claros.</p>
+        </div>
+
+        <div id="project-grid" class="project-grid reveal" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="certificaciones" class="section">
+      <div class="site-shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Educación y certificaciones</p>
+          <h2>Formación matemática con especialización aplicada a datos</h2>
+        </div>
+        <div class="education-grid reveal">
+          <article class="education-card">
+            <span class="material-symbols-outlined" aria-hidden="true">school</span>
+            <p>Educación</p>
+            <h3>Licenciatura en Matemáticas</h3>
+            <span>Universidad Nacional Autónoma de México - UNAM</span>
+            <strong>Generación 2018-2022</strong>
+          </article>
+          <article class="education-card">
+            <span class="material-symbols-outlined" aria-hidden="true">workspace_premium</span>
+            <p>Certificaciones</p>
+            <h3>Google Data Analytics</h3>
+            <span>Google Career Certificates</span>
+            <a class="credential-link" href="https://coursera.org/share/cc2bbe17eafde05c39c178ccb80b9e1e" target="_blank" rel="noreferrer">Ver credencial</a>
+          </article>
+          <article class="education-card">
+            <span class="material-symbols-outlined" aria-hidden="true">workspace_premium</span>
+            <p>Certificaciones</p>
+            <h3>Python for Everybody</h3>
+            <span>University of Michigan</span>
+            <a class="credential-link" href="https://coursera.org/share/06cb0fbc19cc961df5a6525f2021a833" target="_blank" rel="noreferrer">Ver credencial</a>
+          </article>
+          <article class="education-card">
+            <span class="material-symbols-outlined" aria-hidden="true">workspace_premium</span>
+            <p>Certificaciones</p>
+            <h3>The Structured Query Language</h3>
+            <span>University of Colorado Boulder</span>
+            <a class="credential-link" href="https://coursera.org/share/13cce2dae2f312042832f4484e514857" target="_blank" rel="noreferrer">Ver credencial</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section contact-section">
+      <div class="site-shell contact-grid">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Contacto</p>
+          <h2>Abierto a oportunidades en análisis de datos y BI</h2>
+          <p>Disponible para conversar sobre roles de BI Analyst, Data Analyst, Junior Data Scientist y Analytics / Reporting Analyst.</p>
+        </div>
+        <div class="contact-card reveal">
+          <div class="contact-list">
+            <a href="mailto:istilezzhom@ciencias.unam.mx" data-mailto-target="contact" aria-label="Enviar correo a Ulises López Carpio">
+              <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+              <div><strong>Email</strong><small>istilezzhom@ciencias.unam.mx</small></div>
+            </a>
+            <a href="https://www.linkedin.com/in/ulises-lópez-carpio-74725a283" target="_blank" rel="noreferrer" aria-label="Abrir LinkedIn de Ulises López Carpio">
+              <span class="material-symbols-outlined" aria-hidden="true">person</span>
+              <div><strong>LinkedIn</strong><small>Ulises López Carpio</small></div>
+            </a>
+            <a href="https://github.com/Ulises-L0pez-Carpio" target="_blank" rel="noreferrer" aria-label="Abrir GitHub de Ulises López Carpio">
+              <span class="material-symbols-outlined" aria-hidden="true">code</span>
+              <div><strong>GitHub</strong><small>Ulises-L0pez-Carpio</small></div>
+            </a>
+            <div>
+              <span class="material-symbols-outlined" aria-hidden="true">location_on</span>
+              <div><strong>Ubicación</strong><small>Ciudad de México, México</small></div>
+            </div>
+          </div>
+          <div class="cta-row contact-actions">
+            <button id="copy-email-btn" class="btn btn-secondary" type="button">
+              <span class="material-symbols-outlined" aria-hidden="true">content_copy</span>
+              Copiar correo
+            </button>
+            <a class="btn btn-primary" href="mailto:istilezzhom@ciencias.unam.mx" data-mailto-target="cta">
+              <span class="material-symbols-outlined" aria-hidden="true">send</span>
+              Enviar correo
+            </a>
+            <a class="btn btn-ghost" href="CV_Ulises_Lopez_Carpio.pdf" download>
+              <span class="material-symbols-outlined" aria-hidden="true">description</span>
+              Descargar CV
+            </a>
+          </div>
+          <p id="copy-email-status" class="copy-status" aria-live="polite"></p>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="bg-dark border-t border-darker py-10">
-    <div class="site-shell flex flex-col sm:flex-row items-center justify-between gap-6">
-      <div class="text-center sm:text-left">
-        <p class="font-brand font-extrabold text-light">Ulises López</p>
-        <p class="text-muted-dark text-xs mt-1">Portafolio</p>
+  <footer class="site-footer">
+    <div class="site-shell footer-grid">
+      <p><strong>Ulises López Carpio</strong><span>BI Analyst | Analista de Datos</span></p>
+      <div>
+        <a href="https://github.com/Ulises-L0pez-Carpio" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/ulises-lópez-carpio-74725a283" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="mailto:istilezzhom@ciencias.unam.mx" data-mailto-target="footer">Email</a>
       </div>
-
-      <div class="flex items-center gap-6">
-        <a href="https://github.com/Ulises-L0pez-Carpio" target="_blank" rel="noreferrer" class="text-muted-dark hover:text-light transition-colors text-sm flex items-center gap-1.5">
-          <span class="material-symbols-outlined text-lg">code</span> GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/ulises-lópez-carpio-74725a283" target="_blank" rel="noreferrer" class="text-muted-dark hover:text-light transition-colors text-sm flex items-center gap-1.5">
-          <span class="material-symbols-outlined text-lg">person</span> LinkedIn
-        </a>
-        <a href="mailto:istilezzhom@ciencias.unam.mx" class="text-muted-dark hover:text-light transition-colors text-sm flex items-center gap-1.5">
-          <span class="material-symbols-outlined text-lg">mail</span> Email
-        </a>
-      </div>
-
-      <p class="text-muted text-xs text-center sm:text-right">
-        &copy; 2026 Ulises López. Todos los derechos reservados.
-      </p>
+      <small>&copy; 2026 Ulises López Carpio. Todos los derechos reservados.</small>
     </div>
   </footer>
 
