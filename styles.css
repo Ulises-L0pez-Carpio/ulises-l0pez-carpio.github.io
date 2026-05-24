@@ -262,6 +262,13 @@ h3 {
   font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 24;
 }
 
+.icon-linkedin {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+  fill: currentColor;
+}
+
 .hero-panel,
 .about-card,
 .skill-card,
@@ -657,7 +664,8 @@ h3 {
   background: rgba(56, 189, 248, 0.08);
 }
 
-.contact-list span {
+.contact-list span,
+.contact-list .icon-linkedin {
   color: var(--accent);
 }
 
@@ -722,6 +730,23 @@ h3 {
   color: var(--muted);
   font-size: 0.84rem;
   font-weight: 700;
+}
+
+.footer-grid a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.footer-icon {
+  width: 0.95rem;
+  height: 0.95rem;
+  flex: 0 0 auto;
+  fill: currentColor;
+}
+
+span.footer-icon {
+  font-size: 1rem;
 }
 
 .footer-grid a:hover {
