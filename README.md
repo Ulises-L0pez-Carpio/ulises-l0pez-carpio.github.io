@@ -17,7 +17,7 @@ Cuando ese repo exista y tenga este contenido, la URL será:
 - `index.html`: estructura general del portafolio
 - `styles.css`: estilos
 - `app.js`: datos y renderizado de proyectos, menú móvil y botón de copiar correo
-- `CV_Ulises_Lopez_Carpio.pdf`: CV descargable
+- `CV_Ulises_Lopez_Carpio_Analista_Datos.pdf`: CV descargable
 - `project-previews/`: videos de preview de proyectos
 - `.nojekyll`: evita procesamiento innecesario de Jekyll
 
@@ -35,7 +35,7 @@ Luego abre:
 
 ## Qué revisar antes de publicar
 
-1. Que `CV_Ulises_Lopez_Carpio.pdf` descargue correctamente.
+1. Que `CV_Ulises_Lopez_Carpio_Analista_Datos.pdf` descargue correctamente.
 2. Que los anchors del menú funcionen en desktop y móvil.
 3. Que los videos de `project-previews/` carguen sin cambiar sus nombres.
 4. Que el botón `Copiar correo` funcione.
