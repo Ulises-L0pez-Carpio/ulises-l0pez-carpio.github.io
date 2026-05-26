@@ -60,7 +60,7 @@ var projects = [
     dashboardUrl: "",
     caseStudyUrl: "",
     previewImage: "",
-    previewVideo: "",
+    previewVideo: "project-previews/bellabeat.mp4",
     featured: false
   },
   {
